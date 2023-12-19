@@ -309,6 +309,9 @@ export async function updatePost(post: IUpdatePost) {
       }
     );
 
+    // Todo: Optimise post update service
+    console.log({ updatedPost });
+
     // Failed to update
     if (!updatedPost) {
       // Delete new file that has been recently uploaded
@@ -363,6 +366,8 @@ export async function likePost(postId: string, likesArray: string[]) {
         likes: likesArray,
       }
     );
+
+    console.log({ updatedPost })
 
     if (!updatedPost) throw Error;
 
